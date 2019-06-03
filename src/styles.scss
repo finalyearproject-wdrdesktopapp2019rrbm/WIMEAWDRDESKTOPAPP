@@ -1,0 +1,17 @@
+@import 'themes';
+
+@import '~@nebular/theme/styles/globals';
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@include nb-install() {
+  @include nb-theme-global();
+};
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  -webkit-app-region: drag;
+}
+
+a, button, input, select {
+  -webkit-app-region: no-drag;
+
+}

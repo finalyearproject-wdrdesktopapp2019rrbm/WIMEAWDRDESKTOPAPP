@@ -1,0 +1,9 @@
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes/corporate';
+
+$nb-themes: nb-register-theme((
+  // add your variables here like:
+  // color-bg: #4ca6ff,
+
+  header-bg: #56a5db
+), corporate, corporate);

@@ -1,0 +1,44 @@
+  <nb-layout class="container" *ngIf="info.token; else loggedOut">
+                    <nb-layout-header fixed>
+                    <!-- Header-->
+                    WDR Desktop App
+
+                    </nb-layout-header>
+
+                    <!-- side bar content -->
+                    <nb-sidebar>
+                        <div class="nav navbar-nav" routerLinkActive="active">
+                          <div *ngIf="authority === 'oc'" class="nav-item" >
+                            <nb-menu [items]="items" autoCollapse="true">
+                            </nb-menu>
+                          </div>
+                          <div *ngIf="authority === 'observer'" class="nav-item" >
+                            <nb-menu [items]="observerMenu" autoCollapse="true">
+                            </nb-menu>
+                          </div>
+                          <div *ngIf="authority === 'managerData'" class="nav-item" >
+                            <nb-menu [items]=" managerDataMenu" autoCollapse="true">
+                            </nb-menu>
+                          </div>
+                          <div *ngIf="!authority" class="nav-item" >
+                            <a class="nav-link" routerLink="auth/login">Login</a>
+                          </div>
+
+                        </div>
+
+                    </nb-sidebar>
+
+                    <nb-layout-column>
+                      <router-outlet></router-outlet>
+                    </nb-layout-column>
+
+              <nb-layout-footer fixed>
+              <!-- Insert footer here -->
+                WIMEA-ICT WDR DESKTOP APP &copy;2019
+              </nb-layout-footer>
+
+  </nb-layout>
+<!-- </div> -->
+<ng-template #loggedOut>
+  <app-login></app-login>
+</ng-template>

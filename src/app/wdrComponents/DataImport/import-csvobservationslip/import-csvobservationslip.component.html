@@ -1,0 +1,18 @@
+<div class="row col-sm-6" style="max-width:350px;">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>            
+      <div class="form-group">
+        <label for="file">Import CSV Observationslip File</label>
+        <input type="file" class="form-control" name="csvObservationslip" [(ngModel)]="form.csvObservationslip" #csvObservationslip="ngModel" />
+        <div *ngIf="f.submitted && password.invalid">
+          <div *ngIf="csvObservationslip.errors.required">Password is required</div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <button class="btn btn-primary">Upload file observationslips</button>
+        <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
+          Signup failed!<br/>{{errorMessage}}
+        </div>
+      </div>
+    </form>
+</div>
