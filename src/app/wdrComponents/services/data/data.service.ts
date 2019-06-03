@@ -42,6 +42,12 @@ export class DataService {
     getAllObservationslips(){
       return this._http.get(this.formsUrl);
     }
+
+    getReportObservationslips(){
+      return this._http.get(this.formsUrl)
+      .map(res => res.json());
+    }
+
     countSyncObservationslips(){
       return this._http.get(this.formsUrl+'/count');
     }

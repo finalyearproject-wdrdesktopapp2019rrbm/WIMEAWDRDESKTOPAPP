@@ -15,7 +15,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import {
   MatButtonModule, MatDialogModule, 
   MatInputModule, MatPaginatorModule, MatSortModule,
-  MatTableModule, MatToolbarModule, MatIconModule
+  MatTableModule, MatToolbarModule, MatIconModule, MatCardModule
 } from '@angular/material';
 
 // nebular for theme
@@ -106,6 +106,7 @@ import { ObservationslipReportComponent } from './wdrComponents/ReportGeneration
     MatSortModule,
     MatTableModule,
     MatToolbarModule,
+    MatCardModule,
     MatPaginatorModule,
     ReactiveFormsModule,
     MatIconModule
