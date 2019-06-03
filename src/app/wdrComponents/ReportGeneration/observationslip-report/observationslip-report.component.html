@@ -1,0 +1,310 @@
+<div id="content" #content>
+  <mat-card>
+    <div class="alert alert-info">
+        <strong>Html To PDF Conversion - Angular 6</strong>
+    </div>
+    <div>
+      <input type="button" class="btn btn-info" value="CAPTURE" (click)="captureScreen()"/>
+    </div>
+  </mat-card>
+</div>
+<div>
+    <br />
+  <mat-card>
+    <table id="contentToConvert">
+      <h3>Form No.393(Rev.9/2015)</h3>
+      <h3>UGANDA NATIONAL METEOROLOGICAL AUTHORITY</h3>
+      <br><br>
+      <span><strong>FORM OBS001OBSERVATION SLIP</strong></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <br>
+      <span><strong>TIME</strong></span>{{ observationslip.TIME}}<span class="dotted-line"></span>
+      <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      <span><strong>DATE</strong></span> <span class="dotted-line">{{ observationslip.Date }}</span>
+
+      <div class="clearfix"></div>
+      <!-- <form action="" method="post" > -->
+
+               <table class="table" id="table2excel">
+
+                   <table class="table-bordered">
+                       <tr>
+                           <td class="main" colspan="12">
+                                   Total amount of all clouds <span class="dotted-line"> {{ observationslip.TotalAmountOfAllClouds }}</span>
+                               <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+                               Total amount of low clouds <span class="dotted-line">{{ observationslip.TotalAmountOfLowClouds }}</span>
+                               <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                            </td>
+                       </tr>
+                       <tr>
+                           <td class="main" colspan="4">LOW</td>
+                           <td class="main" colspan="4">MIDDLE</td>
+                           <td class="main" colspan="4">HIGH</td>
+                       </tr>
+                       <tr>
+                           <td class="main">Type</td>
+                           <td class="main">Oktas</td>
+                           <td class="main">Height</td>
+                           <td class="main">CL CODE</td>
+
+                           <td class="main">Type</td>
+                           <td class="main">Oktas</td>
+                           <td class="main">Height</td>
+                           <td class="main">CL CODE</td>
+
+                           <td class="main">Type</td>
+                           <td class="main">Oktas</td>
+                           <td class="main">Height</td>
+                           <td class="main">CL CODE</td>
+                       </tr>
+                       <tr>
+                        <td class="main">{{ observationslip.TypeOfLowClouds1 }} </td>
+                        <td class="main">{{ observationslip.OktasOfLowClouds1 }}</td>
+                        <td class="main">{{ observationslip.HeightOfLowClouds1 }}</td>
+                        <td class="main">{{ observationslip.CLCODEOfLowClouds1 }}</td>
+
+                        <td class="main">{{ observationslip.TypeOfMediumClouds1 }}</td>
+                        <td class="main">{{ observationslip.OktasOfMediumClouds1 }}</td>
+                        <td class="main">{{ observationslip.HeightOfMediumClouds1 }}</td>
+                        <td class="main">{{ observationslip.CLCODEOfMediumClouds1 }}</td>
+
+                        <td class="main">{{ observationslip.TypeOfHighClouds1 }}</td>
+                        <td class="main">{{ observationslip.OktasOfHighClouds1 }}</td>
+                        <td class="main">{{ observationslip.HeightOfHighClouds1 }}</td>
+                        <td class="main">{{ observationslip.CLCODEOfHighClouds1 }}</td>
+                    </tr>
+                    <tr>
+                       <td class="main">{{ observationslip.TypeOfLowClouds2 }}</td>
+                       <td class="main">{{ observationslip.OktasOfLowClouds2 }}</td>
+                       <td class="main">{{ observationslip.HeightOfLowClouds2 }}</td>
+                       <td class="main">{{ observationslip.CLCODEOfLowClouds2 }}</td>
+
+
+                       <td class="main">{{ observationslip.TypeOfMediumClouds2 }}</td>
+                       <td class="main">{{ observationslip.OktasOfMediumClouds2 }}</td>
+                       <td class="main">{{ observationslip.HeightOfMediumClouds2 }}</td>
+                       <td class="main">{{ observationslip.CLCODEOfMediumClouds2 }}</td>
+
+                       <td class="main">{{ observationslip.TypeOfHighClouds2 }}</td>
+                       <td class="main">{{ observationslip.OktasOfHighClouds2 }}</td>
+                       <td class="main">{{ observationslip.HeightOfHighClouds2 }}</td>
+                       <td class="main">{{ observationslip.CLCODEOfHighClouds2 }}</td>
+                   </tr>
+                   <tr>
+                      <td class="main">{{ observationslip.TypeOfLowClouds3 }}</td>
+                      <td class="main">{{ observationslip.OktasOfLowClouds3 }}</td>
+                      <td class="main">{{ observationslip.HeightOfLowClouds3 }}</td>
+                      <td class="main">{{ observationslip.CLCODEOfLowClouds3 }}</td>
+
+
+                      <td class="main">{{ observationslip.TypeOfMediumClouds3 }}</td>
+                      <td class="main">{{ observationslip.OktasOfMediumClouds3 }}</td>
+                      <td class="main">{{ observationslip.HeightOfMediumClouds3 }}</td>
+                      <td class="main">{{ observationslip.CLCODEOfMediumClouds3 }}</td>
+
+                      <td class="main">{{ observationslip.TypeOfHighClouds3 }}</td>
+                      <td class="main">{{ observationslip.OktasOfHighClouds3 }}</td>
+                      <td class="main">{{ observationslip.HeightOfHighClouds3 }}</td>
+                      <td class="main">{{ observationslip.CLCODEOfHighClouds3 }}</td>
+                  </tr>
+                      
+                       <tr>
+                           <td class="main" colspan="6">Cloud Searchlight Alidade Reading
+                               <span class="dotted-line">{{ obsrvationslip.CloudSearchLightReading }} </span>
+                           </td>
+
+                           <td class="main" colspan="6">Rainfall(mm)
+                               <span class="dotted-line">{{ observationslip.Rainfall }}</span>
+                           </td>
+                       </tr>
+
+                     </table>
+                       <br><br>
+
+               <table class="report-table">
+
+                   <tr>
+                       <td class="main" rowspan="2">Dry Bulb</td>
+                       <td class="main" rowspan="2">Wet Bulb</td>
+
+                       <td class="main" colspan="2">Max</td>
+
+                       <td class="main" colspan="2">Min</td>
+
+                       <td class="main" colspan="2">Piche</td>
+
+                       <td class="main" colspan="3">Time Marks</td>
+
+                   </tr>
+
+                   <tr>
+
+                       <td class="main">Read</td>
+                       <td class="main">Reset</td>
+
+
+                       <td class="main">Read</td>
+                       <td class="main">Reset</td>
+
+
+                       <td class="main">Read</td>
+                       <td class="main">Reset</td>
+
+
+                       <td class="main">Thermo</td>
+                       <td class="main">Hygro</td>
+                       <td class="main">Rain Rec.</td>
+
+                   </tr>
+
+                   <tr>
+
+                    <td class="main">{{ observationslip.Dry_Bulb }}</td>
+                    <td class="main">{{ observationslip.Wet_Bulb }}</td>
+
+                    <td class="main">{{ observationslip.Max_Read }}</td>
+                    <td class="main">{{ observationslip.Max_Reset }}</td>
+
+
+                    <td class="main">{{ observationslip.Min_Read }}</td>
+                    <td class="main">{{ observationslip.Min_Reset }}</td>
+
+                    <td class="main">{{ observationslip.Piche_Read }}</td>
+                    <td class="main">{{ observationslip.Piche_Reset }}</td>
+
+
+                    <td class="main">{{ observationslip.TimeMarksThermo }}</td>
+                    <td class="main">{{ observationslip.TimeMarksHygro }}</td>
+                    <td class="main">{{ observationslip.TimeMarksRainRec }}</td>
+
+                </tr>
+               </table>
+                       <br><br>
+
+                   <table class="report-table">
+
+                       <tr>
+                           <td class="main" rowspan="2">Present Weather</td>
+                           <td class="main" rowspan="2">Visibility</td>
+
+
+
+                           <td class="main" colspan="2">Wind</td>
+
+                           <td class="main" rowspan="2">Gusting(Kts)</td>
+                       </tr>
+
+
+                       <tr>
+                           <td class="main">Direction</td>
+                           <td class="main">Speed (Kts)</td>
+
+                       </tr>
+
+                     <tr>
+                        <td class="main"> {{  observationslip.Present_Weather }}</td>
+
+                        <td class="main"> {{  observationslip.Visibility }}</td>
+
+                        <td class="main"> {{  observationslip.Wind_Direction }}</td>
+                        <td class="main"> {{  observationslip.Wind_Speed }}</td>
+
+                        <td class="main"> {{  observationslip.Gusting }}</td>
+                      </tr>
+                   </table>
+
+                   <br>
+                       <br>
+
+                   <table class="report-table">
+                       <tr>
+                           <td class="main">Attd.Thermo.(&deg;C)</td>
+                           <td class="main">{{ observationslip.AttdThermo }}</td>
+
+
+                           <td class="main" colspan="2">Time Marks</td>
+
+                           <td class="main">Other T/Marks</td>
+                       </tr>
+
+
+                       <tr>
+                           <td class="main">Pr.As Read(mbs)</td>
+                           <td class="main">{{ observationslip.PrAsRead }}</td>
+
+
+                           <td class="main">Barograph</td>
+
+                           <td class="main">Anemograph</td>
+
+                           <td class="main">{{ observationslip.OtherTMarks }}</td>
+                       </tr>
+
+
+                       <tr>
+                           <td class="main">Correction(mb)</td>
+                           <td class="main"> {{ observationslip.Correction }}</td>
+                           <td class="main">{{ observationslip.imeMarksBarograph }}</td>
+                           <td class="main">{{ observationslip.TimeMarksAnemograph }}</td>
+
+                           <td class="main">{{ observationslip.OtherTMarks }}</td>
+                       </tr>
+
+
+                       <tr>
+                            <td class="main">C.L.P(mb)</td>
+                            <td class="main">{{ observationslip.CLP }}</td>
+ 
+ 
+                            <td class="main" colspan="3">Remarks or any other Observations</td>
+ 
+ 
+                        </tr>
+ 
+                        <tr>
+                            <td class="main">M.S.L.Pr(mb)</td>
+                            <td class="main">{{ observationslip.MSLPr }}</td>
+ 
+ 
+                            <td class="main">{{ observationslip.Remarks }}</td>
+                            <td class="main">{{ observationslip.Remarks }}</td>
+                            <td class="main">{{ observationslip.Remarks }}</td>
+ 
+ 
+                        </tr>
+                   </table>
+               </table>
+
+
+               <br><br><br>
+               <span><strong>Data Status</strong></span>
+               <span class="dotted-line">
+                 <!-- <?php  if ($data->Approved=="FALSE"){echo "Not Approved";}else{echo "Approved "."&nbsp;"."By "."&nbsp;".$data->FirstName."&nbsp;".$data->SurName;}?> -->
+               </span>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <span><strong>Observer's Name</strong></span> <span class="dotted-line">{{ observationslip.O_SubmittedBy }}</span>
+               <?php if($data->Endorsed == "ENDORSE") ?>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <span><strong>Endorsement Status</strong></span> <span class="dotted-line"><?php echo "Endorsed by"."&nbsp;".$data->EndorsedBy }}</span><br /><br />
+               <?php } ?>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <span><strong>WDR System Report Generated By</strong></span> <span class="dotted-line"><?php echo $name }}</span>
+               <input type="hidden"  name="date" value="{{ observationslip.Date }}"/>
+               <input type="hidden"  name="time" value="{{ observationslip.TIME }}"/>
+               <input type="hidden"  name="stationName" value="{{ observationslip.StationName }}"/>
+               <input type="hidden"  name="stationNumber" value="{{ observationslip.StationNumber }}"/>
+ 
+               <br><br><br>
+               <button onClick="print();" class="btn btn-primary no-print"><i class="fa fa-print"></i> Print info on this page</button>
+               <button id="export" class="btn btn-primary no-print"><i class="fa fa-print"></i> Export to excel</button>
+               <button id="exportcsv" class="btn btn-primary no-print"  data-export="export"><i class="fa fa-print"></i> Export to csv</button>
+               <button id="reportIssue" type="submit" class="btn btn-primary no-print" style="margin-left:150px;"  ><i class="fa fa-envelope-o"></i> Report Issues to OC</button>
+ 
+ 
+               <a class="btn btn-warning pull-right"><i class="fa fa-times"></i> Close report</a>
+               <div class="clearfix"></div>
+              <br /><br />
+          <!-- </form> -->
+      </table>
+  </mat-card>
+</div>
