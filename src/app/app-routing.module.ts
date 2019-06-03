@@ -12,6 +12,7 @@ import { ViewComponent } from './wdrComponents/user/view/view.component';
 import { ChangePasswordComponent } from './wdrComponents/user/edit/change-password/change-password.component';
 import { ImportCSVobservationslipComponent } from './wdrComponents/DataImport/import-csvobservationslip/import-csvobservationslip.component';
 import { ViewWdrUsersComponent } from './wdrComponents/user/view-wdr-users/view-wdr-users.component';
+import { ObservationslipReportComponent } from './wdrComponents/ReportGeneration/observationslip-report/observationslip-report.component';
 
 const routes: Routes = [
     {
@@ -56,12 +57,11 @@ const routes: Routes = [
     {
       path: 'change-password',
       component: ChangePasswordComponent
+    },
+    {
+      path: 'observationslip-report',
+      component: ObservationslipReportComponent
     }
-    // ,
-    // {
-    //   path: '',
-    //   component: LoginComponent
-    // }
 ];
 
 @NgModule({

@@ -49,6 +49,7 @@ import { DeleteUserDialogComponent } from './wdrComponents/user/dialog/delete-us
 import { ChangePasswordComponent } from './wdrComponents/user/edit/change-password/change-password.component';
 import { ImportCSVobservationslipComponent } from './wdrComponents/DataImport/import-csvobservationslip/import-csvobservationslip.component';
 import { ViewWdrUsersComponent } from './wdrComponents/user/view-wdr-users/view-wdr-users.component';
+import { ObservationslipReportComponent } from './wdrComponents/ReportGeneration/observationslip-report/observationslip-report.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { ViewWdrUsersComponent } from './wdrComponents/user/view-wdr-users/view-
     DeleteUserDialogComponent,
     ChangePasswordComponent,
     ImportCSVobservationslipComponent,
-    ViewWdrUsersComponent
+    ViewWdrUsersComponent,
+    ObservationslipReportComponent
   ],
   imports: [
     BrowserModule,
