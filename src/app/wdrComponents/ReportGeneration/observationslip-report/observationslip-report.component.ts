@@ -12,6 +12,7 @@ import { Observationslip } from '../../models/observationslip/observationslip';
 export class ObservationslipReportComponent implements OnInit {
   observationslips: any = [];
   observationslip: any = [];
+  userInfo;
 
   public captureScreen()
   {
@@ -24,7 +25,7 @@ export class ObservationslipReportComponent implements OnInit {
       let heightLeft = imgHeight;
 
       const contentDataURL = canvas.toDataURL('image/png');
-      let pdf =  new jspdf('o', 'mm', 'a3'); // potrait(orientation), mm(unit), A3, A4 pdf
+      let pdf =  new jspdf('orientation', 'mm', 'a3'); // potrait(orientation), mm(unit), A3, A4 pdf
       let position = 0;
       pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
       pdf.save('ObservationslipReport.pdf'); // generated pdf
@@ -32,14 +33,22 @@ export class ObservationslipReportComponent implements OnInit {
     });
   }
 
+  public user;
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedinUser'));
+    this.user = loggedInUser;
+    this.userInfo =  this.user[0];
+    console.log(name);
+    console.log(this.user);
+
     this.dataService.getReportObservationslips()
-.subscribe( data => {
-  this.observationslips = data;
-  this.observationslip = this.observationslips[0];
-  console.log(this.observationslip);
+    .subscribe( data => {
+      this.observationslips = data;
+      this.observationslip = this.observationslips[0];
+      console.log(this.observationslip);
 });
   }
 

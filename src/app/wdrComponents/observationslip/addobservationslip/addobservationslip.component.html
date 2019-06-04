@@ -7,7 +7,7 @@
       </ol>
   </section>
   <div [ngClass]="(conn.connected$ | async) ? 'success' : 'error'" style="margin-left:50%">
-      <span><b class="btn btn-success"> Current status:  {{ (conn.connected$ | async) ? 'Online' : 'Failed... Retrying...' }} </b></span>
+      <span><b class="btn btn-success"> Current status:  {{ (conn.connected$ | async) ? 'Online' : 'Failed to connect... Retrying...' }} </b></span>
     </div>
     <br />
 

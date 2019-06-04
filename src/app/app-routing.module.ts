@@ -47,7 +47,7 @@ const routes: Routes = [
       component: RegisterComponent
     },
     {
-      path: 'edit-user',
+      path: 'edit-user/:id',
       component: EditComponent
     },
     {

@@ -1,7 +1,7 @@
 <div id="content" #content>
   <mat-card>
     <div class="alert alert-info">
-        <strong>Html To PDF Conversion - Angular 6</strong>
+        <strong>WDR OBSERVATIONSLIP REPORT GENERATION</strong>
     </div>
     <div>
       <input type="button" class="btn btn-info" value="CAPTURE" (click)="captureScreen()"/>
@@ -12,21 +12,21 @@
     <br />
   <mat-card>
     <table id="contentToConvert">
-      <h3>Form No.393(Rev.9/2015)</h3>
+      <h3>Form No.2019A003(Rev.9/2019)</h3>
       <h3>UGANDA NATIONAL METEOROLOGICAL AUTHORITY</h3>
       <br><br>
       <span><strong>FORM OBS001OBSERVATION SLIP</strong></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <br>
       <span><strong>TIME</strong></span>{{ observationslip.TIME}}<span class="dotted-line"></span>
       <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-      <span><strong>DATE</strong></span> <span class="dotted-line">{{ observationslip.Date }}</span>
+      <span><strong>DATE </strong></span> <span class="dotted-line"> {{ observationslip.Date }}</span>
 
       <div class="clearfix"></div>
       <!-- <form action="" method="post" > -->
 
                <table class="table" id="table2excel">
 
-                   <table class="table-bordered">
+                   <table class="table">
                        <tr>
                            <td class="main" colspan="12">
                                    Total amount of all clouds <span class="dotted-line"> {{ observationslip.TotalAmountOfAllClouds }}</span>
@@ -107,13 +107,13 @@
                       <td class="main">{{ observationslip.HeightOfHighClouds3 }}</td>
                       <td class="main">{{ observationslip.CLCODEOfHighClouds3 }}</td>
                   </tr>
-                      
+
                        <tr>
-                           <td class="main" colspan="6">Cloud Searchlight Alidade Reading
-                               <span class="dotted-line">{{ obsrvationslip.CloudSearchLightReading }} </span>
+                           <td class="main" colspan="6">Cloud Searchlight Alidade Reading:
+                               <span class="dotted-line">{{ observationslip.CloudSearchLightReading }} </span>
                            </td>
 
-                           <td class="main" colspan="6">Rainfall(mm)
+                           <td class="main" colspan="6">Rainfall(mm) :
                                <span class="dotted-line">{{ observationslip.Rainfall }}</span>
                            </td>
                        </tr>
@@ -254,23 +254,23 @@
                        <tr>
                             <td class="main">C.L.P(mb)</td>
                             <td class="main">{{ observationslip.CLP }}</td>
- 
- 
+
+
                             <td class="main" colspan="3">Remarks or any other Observations</td>
- 
- 
+
+
                         </tr>
- 
+
                         <tr>
                             <td class="main">M.S.L.Pr(mb)</td>
                             <td class="main">{{ observationslip.MSLPr }}</td>
- 
- 
+
+
                             <td class="main">{{ observationslip.Remarks }}</td>
                             <td class="main">{{ observationslip.Remarks }}</td>
                             <td class="main">{{ observationslip.Remarks }}</td>
- 
- 
+
+
                         </tr>
                    </table>
                </table>
@@ -279,28 +279,29 @@
                <br><br><br>
                <span><strong>Data Status</strong></span>
                <span class="dotted-line">
-                 <!-- <?php  if ($data->Approved=="FALSE"){echo "Not Approved";}else{echo "Approved "."&nbsp;"."By "."&nbsp;".$data->FirstName."&nbsp;".$data->SurName;}?> -->
+                 {{ (observationslip.Approved) ?  'Approved' : 'Not Approved '}}
+                  <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FirstName:  {{ observationslip.SurName }} -->
                </span>
                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               <span><strong>Observer's Name</strong></span> <span class="dotted-line">{{ observationslip.O_SubmittedBy }}</span>
-               <?php if($data->Endorsed == "ENDORSE") ?>
+               <span><strong>Observer's Name </strong></span> <span class="dotted-line"> {{ observationslip.O_SubmittedBy }}</span>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <strong>Endorsement status </strong>  <span class="dotted-line">{{ observationslip.Endorsed }}</span>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+               <span><strong> Endorsement by </strong></span> <span class="dotted-line">{{ observationslip.EndorsedBy }}</span><br /><br />
                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               <span><strong>Endorsement Status</strong></span> <span class="dotted-line"><?php echo "Endorsed by"."&nbsp;".$data->EndorsedBy }}</span><br /><br />
-               <?php } ?>
-               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               <span><strong>WDR System Report Generated By</strong></span> <span class="dotted-line"><?php echo $name }}</span>
+               <span><strong>WDR System Report Generated By </strong></span> <span class="dotted-line"> {{ userInfo.FirstName}} &nbsp; &nbsp; {{ userInfo.SurName}}</span>
                <input type="hidden"  name="date" value="{{ observationslip.Date }}"/>
                <input type="hidden"  name="time" value="{{ observationslip.TIME }}"/>
                <input type="hidden"  name="stationName" value="{{ observationslip.StationName }}"/>
                <input type="hidden"  name="stationNumber" value="{{ observationslip.StationNumber }}"/>
- 
+
                <br><br><br>
                <button onClick="print();" class="btn btn-primary no-print"><i class="fa fa-print"></i> Print info on this page</button>
                <button id="export" class="btn btn-primary no-print"><i class="fa fa-print"></i> Export to excel</button>
                <button id="exportcsv" class="btn btn-primary no-print"  data-export="export"><i class="fa fa-print"></i> Export to csv</button>
                <button id="reportIssue" type="submit" class="btn btn-primary no-print" style="margin-left:150px;"  ><i class="fa fa-envelope-o"></i> Report Issues to OC</button>
- 
- 
+
+
                <a class="btn btn-warning pull-right"><i class="fa fa-times"></i> Close report</a>
                <div class="clearfix"></div>
               <br /><br />
