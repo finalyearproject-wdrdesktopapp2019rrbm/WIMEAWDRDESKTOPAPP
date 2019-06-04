@@ -19,7 +19,7 @@ export class AuthService {
   private _loginUrl = 'http://localhost:3000/users/authenticate';
   private loginUrl = 'http://localhost:8081/api/auth/signin';
   private signupUrl = 'http://localhost:8081/api/auth/signup';
-  private userUrl = 'http://localhost:8081/api/user';
+  private userApi = 'http://localhost:8081/api/users';
 
   checkResponse: any;
 
@@ -41,10 +41,9 @@ export class AuthService {
     return this._http.post(this._loginUrl, user);
   }
 
-  getUserDetails(id){
+  getUserDetails(id: number ): Observable <any>{
     // post to httpclient and display user details
-    return this._http.post("http://localhost/api/",{'id':id})
-      .map(res=>res.json());
+    return this.http.get(this.userApi + '/' + id);
   }
 
   deleteUser(id){
@@ -55,7 +54,7 @@ export class AuthService {
 
   getAllUsers(){
     //post to httpclient and display user details
-    return this._http.get("http://localhost:8081/api/users")
+    return this._http.get(this.userApi)
     .map(res=>{
       this.checkResponse =  res;
       if(this.checkResponse.body !== '0'){

@@ -1,56 +1,37 @@
-   <!-- <div class="row col-sm-6" style="max-width:350px;">
-      <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-          <div class="form-group">
-              <label for="name">User id</label>
-              <input type="number" class="form-control" name="id" [(ngModel)]="form.id" #id="ngModel" required  placeholder="1"/>
-              <div *ngIf="f.submitted && id.invalid">
-                <div *ngIf="id.errors.required">User ID is required</div>
-              </div>
-            </div>
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" name="name" [(ngModel)]="form.name" #name="ngModel" required  placeholder="TestObserverName" />
-          <div *ngIf="f.submitted && name.invalid">
-            <div *ngIf="name.errors.required">Name is required</div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"
-            required placeholder="testObserver" />
-          <div *ngIf="f.submitted && username.invalid">
-            <div *ngIf="username.errors.required">Username is required</div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="text" class="form-control" name="email" [(ngModel)]="form.email" #email="ngModel" placeholder="testobserver@gmail.com" required email />
-          <div *ngIf="f.submitted && email.invalid">
-            <div *ngIf="email.errors.required">Email is required</div>
-            <div *ngIf="email.errors.email">Email must be a valid email address</div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
-            required minlength="6" />
-          <div *ngIf="f.submitted && password.invalid">
-            <div *ngIf="password.errors.required">Password is required</div>
-            <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="password">User Role</label>
-          <input type="text" class="form-control" name="roles[]" [(ngModel)]="form.roles" #roles="ngModel" required  placeholder="observer"/>
-          <div *ngIf="f.submitted && roles.invalid">
-            <div *ngIf="roles.errors.required">User role is required</div>
-          </div>
-        </div>
-        <div class="form-group">
-          <button class="btn btn-primary">Register</button>
-          <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
-            Signup failed!<br/>{{errorMessage}}
-          </div>
-        </div>
-      </form>
-    </div> -->
+<div class="panel panel-default">
+    <div class="panel-heading">WDR User Edit Form : You can edit user details here.</div>
+    <div class="panel-body">
+      <form class="form-horizontal" (submit)="updateUser()">
+    <div class="form-group">
+      <label for="emp_name" class="col-sm-2 control-label">User's Name : </label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control"  [(ngModel)]="user.name" name="name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="position" class="col-sm-2 control-label">Username : </label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" [(ngModel)]="user.username" name="username">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="department" class="col-sm-2 control-label">Email : </label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control"  [(ngModel)]="user.email" name="email">
+      </div>
+    </div>
+   
+    
+  
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-8">
+        <button type="submit" class="btn btn-success">Update</button>
+        <a  class="btn btn-info" (click)="goBack()">Cancel</a>
+      </div>
+     
+    </div>
+  </form>
+  
+    </div>
+  </div>
+  

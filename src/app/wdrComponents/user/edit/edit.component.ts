@@ -9,14 +9,8 @@ import { AuthService } from '../../services/allServices';
   styleUrls: ['./edit.component.scss']
 })
 export class EditComponent implements OnInit {
-  userModel: SignUpInfo = {
-    id: 0,
-   name: '',
-   username: '',
-   email: '',
-   password: '',
-   roles: []
-  }
+
+  user: any = {}; //any =[]
 
 
   constructor(
@@ -26,26 +20,29 @@ export class EditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    
     const userId = JSON.parse(localStorage.getItem('editUserId'));
     console.log(userId);
-    if(!userId){
+    if(!userId) {
       alert('Invalid action.');
       this.router.navigate(['wdr-users']);
       return;
+    } else {
+      this.getSingleUser(userId);
     }
-    // this.getSingleUser();
   }
 
- 
-  // id = this.route.snapshot.params['id'];
-  
-  // getSingleUser(){
-  //   this.dataService.getUserDetails(+userId)
-  //   .subscribe( user =>{
-  //     this.userModel = user[0];
-  //   })
-  
-  // }
+  getSingleUser(userId){
+    this.dataService.getUserDetails(+userId)
+    .subscribe( user => {
+      console.log(user)
+      this.user = user;
+    }, err => console.log(err)); 
+  }
+
+  updateUser(){
+    console.log('update user function');
+  }
+
+
 
 }
