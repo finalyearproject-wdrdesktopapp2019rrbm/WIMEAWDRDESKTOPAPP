@@ -7,7 +7,7 @@
       </ol>
   </section>
   <div [ngClass]="(conn.connected$ | async) ? 'success' : 'error'" style="margin-left:50%">
-      <span><b class="btn btn-success"> Current status:  {{ (conn.connected$ | async) ? 'Online' : 'Failed... Retrying...' }} </b></span>
+      <span><b class="btn btn-success"> Current status:  {{ (conn.connected$ | async) ? 'Online' : 'Failed to connect... Retrying...' }} </b></span>
     </div>
     <br />
 
@@ -59,7 +59,7 @@
               <td colspan = "4">
                   <div class="input-group">
                       <span class="input-group-addon">Station Name</span>
-                      <input type="text" name="stationName" [(ngModel)]="observationslip.stationName"  required class="form-control" value="Kampala"  readonly class="form-control" >
+                      <input type="text" name="Station" [(ngModel)]="observationslip.Station"  required class="form-control" value="Kampala"  readonly class="form-control" >
 
                     </div>
               </td>
@@ -969,7 +969,7 @@
                                         <td>
                                           <div class="input-group">
                                             <span class="input-group-addon">Other T/MARKS </span>
-                                            <input type="text" name="otherTMarks"  [(ngModel)]="observationslip.otherTMarks"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder="Enter Other T/MARKS" >
+                                            <input type="text" name="OtherTMarks"  [(ngModel)]="observationslip.OtherTMarks"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder="Enter Other T/MARKS" >
                                           </div>
                                         </td>
                                         <td>

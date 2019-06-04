@@ -59,4 +59,11 @@ wdrUsers: any;
   //   })
   // }
 
+  editUser(user: SignUpInfo ) : void {
+    localStorage.removeItem('edituserId');
+    let userID = user.id.toString();
+    localStorage.setItem('editUserId', userID);
+    this.router.navigate(['edit-user']);
+  }
+
 }

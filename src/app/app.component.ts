@@ -210,7 +210,7 @@ export class AppComponent implements OnInit {
       children: [
         {
           title: 'Observationslip Report',
-          link: [],
+          link: ['observationslip-report'],
         },
         {
           title: 'Meta Report',
