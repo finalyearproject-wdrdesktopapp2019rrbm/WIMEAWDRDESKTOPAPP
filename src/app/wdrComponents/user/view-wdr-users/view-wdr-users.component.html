@@ -3,9 +3,9 @@
   <span>WDR User Management</span>
   <span class="spacer"></span>
   Reload data:
-  <button mat-icon-button (click)="refresh()">
+  <!-- <button mat-icon-button (click)="refresh()"> 
     <mat-icon>refresh</mat-icon>
-  </button>
+  </button> --->
 </mat-toolbar>
 <table mat-table [dataSource] = "dataSource" class = "mat-elevation-z8">
   <ng-container matColumnDef = "id">
@@ -50,7 +50,6 @@
     </tr>
   </thead>
   <tbody>
-     {{users}}
      <tr *ngFor="let user of wdrUsers">
         <td>{{user.id}}</td>
         <td>{{user.name}}</td>
@@ -64,7 +63,6 @@
             <a class="btn btn-danger" (click)="deleteUser(user.id)">Delete</a>
         </td>
      </tr>
-
   </tbody>
 
 </table>

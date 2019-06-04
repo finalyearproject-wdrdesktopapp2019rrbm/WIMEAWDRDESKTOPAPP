@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './wdrComponents/user/login/login.component';
-import { WdrdashboardComponent } from './wdrComponents/wdrdashboard/wdrdashboard.component';
 import { HomeComponent } from './wdrComponents/wdrdashboard/home/home.component';
 import { AddobservationslipComponent } from './wdrComponents/observationslip/addobservationslip/addobservationslip.component';
 import { ViewobservationslipComponent } from './wdrComponents/observationslip/viewobservationslip/viewobservationslip.component';
@@ -15,10 +14,6 @@ import { ViewWdrUsersComponent } from './wdrComponents/user/view-wdr-users/view-
 import { ObservationslipReportComponent } from './wdrComponents/ReportGeneration/observationslip-report/observationslip-report.component';
 
 const routes: Routes = [
-    {
-      path: 'dashboard',
-      component: WdrdashboardComponent
-    },
     {
       path: 'home',
       component: HomeComponent

@@ -130,7 +130,7 @@ constructor(
   private formBuilder: FormBuilder,
   private dataService: DataService,
   private router: Router,
-  private conn: ConnectionServiceService
+  public conn: ConnectionServiceService
 ) {}
 
 ngOnInit(){
