@@ -47,7 +47,9 @@ import { AddUserDialogComponent } from './wdrComponents/user/dialog/add-user-dia
 import { EditUserDialogComponent } from './wdrComponents/user/dialog/edit-user-dialog/edit-user-dialog.component';
 import { DeleteUserDialogComponent } from './wdrComponents/user/dialog/delete-user-dialog/delete-user-dialog.component';
 import { ChangePasswordComponent } from './wdrComponents/user/edit/change-password/change-password.component';
-import { ImportCSVobservationslipComponent } from './wdrComponents/DataImport/import-csvobservationslip/import-csvobservationslip.component';
+import { 
+  ImportCSVobservationslipComponent 
+} from './wdrComponents/DataImport/import-csvobservationslip/import-csvobservationslip.component';
 import { ViewWdrUsersComponent } from './wdrComponents/user/view-wdr-users/view-wdr-users.component';
 
 @NgModule({
