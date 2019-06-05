@@ -43,6 +43,10 @@ export class DataService {
       return this._http.get(this.formsUrl);
     }
 
+    getObservationslip(id: number){
+      return this._http.get(this.formsUrl+ '/'+id);
+    }
+
     getReportObservationslips(){
       return this._http.get(this.formsUrl)
       .map(res => res.json());

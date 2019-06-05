@@ -110,6 +110,7 @@
                             <th>Submitted By</th>
                             <th>Remarks</th>
                             <th>Approved</th>
+                            <th colspan="2">Actions</th>
 
       </tr>
       </thead>
@@ -211,6 +212,10 @@
     		<td>{{observationslip.SubmittedBy}}</td>
     		<td>{{observationslip.Remarks}}</td>
     		<td>{{observationslip.Approved}}</td>
+        <td> <button type="button" class="btn btn-primary " name="button" (click)= "editObservationslip(observationslip.id)">Edit</button></td>
+        <td>{{ observationslip.Approved }}</td>
+
+
        </tr>
       </tbody>
     </table>

@@ -159,15 +159,7 @@ this.secondFormGroup = this.formBuilder.group({
         console.log('Sending it online');
 
         this.syncObservationslip(res);
-      }
-      // const row = res.affectedRows;
-      // if(row == 1){
-      //   console.log('data inserted successfully');
-      //   this.response = "Observationslip successfully";
-      // } else {
-      //   console.log(res);
-      //   this.response =  "Error occured during inserting data";
-      // }
+      }   
 
       this.router.navigate(['view-observationslips']);
     },  err => console.log(err));

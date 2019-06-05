@@ -32,4 +32,13 @@ export class ViewobservationslipComponent implements OnInit {
 
   }
 
+  editObservationslip(id){
+    localStorage.removeItem('editObservationslipId');
+    let observationslipId = id.toString();
+    localStorage.setItem('editSlipId', observationslipId);
+    this.router.navigate(['edit-observationslip']);
+
+
+  }
+
 }

@@ -29,6 +29,11 @@ const routes: Routes = [
 
     },
     {
+      path: 'edit-observationslip',
+      component: EditobservationslipComponent
+
+    },
+    {
       path: 'import-observationslip',
       component: ImportCSVobservationslipComponent
 
