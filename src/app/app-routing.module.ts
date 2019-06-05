@@ -50,6 +50,10 @@ const routes: Routes = [
       component:ViewWdrUsersComponent
     },
     {
+      path: 'view-user',
+      component:ViewComponent
+    },
+    {
       path: 'change-password',
       component: ChangePasswordComponent
     },

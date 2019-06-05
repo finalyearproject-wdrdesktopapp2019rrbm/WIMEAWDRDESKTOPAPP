@@ -46,10 +46,9 @@ export class AuthService {
     return this.http.get(this.userApi + '/' + id);
   }
 
-  deleteUser(id){
-    // return this._http.post(this.userUrl+'/delete', {'idi':id})
-    // .map()=>this.getAllUsers());
-
+  deleteUser(id: number): Observable <any> {
+    console.log(id);
+    return this._http.delete(this.userApi+'/delete/'+id);
   }
 
   getAllUsers(){

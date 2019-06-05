@@ -1,11 +1,6 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {UserService} from '../../services/allServices';
-import {HttpClient} from '@angular/common/http';
-import {MatDialog, MatPaginator, MatSort} from '@angular/material';
-import { SignUpInfo } from '../../models/user/signup-info';
-import {DataSource} from '@angular/cdk/collections';
-import {BehaviorSubject, fromEvent, merge, Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import {Component,  OnInit } from '@angular/core';
+import { AuthService } from '../../services/allServices';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-view',
@@ -14,17 +9,38 @@ import {map} from 'rxjs/operators';
 })
 export class ViewComponent implements OnInit {
 
-  user: SignUpInfo;
+  user: any = {}; // any =[]
 
   constructor(
-              public httpClient: HttpClient,
-              public dialog: MatDialog,
-              public userService: UserService
+    private router: Router,
+    private route: ActivatedRoute,
+    private dataService: AuthService
   ) {
    // this.
   }
 
   ngOnInit() {
+    const userId = JSON.parse(localStorage.getItem('viewUserId'));
+    console.log(userId);
+    if(!userId) {
+      alert('Invalid action.');
+      this.router.navigate(['wdr-users']);
+      return;
+    } else {
+      this.getSingleUser(userId);
+    }
+}
+
+getSingleUser(userId) {
+  this.dataService.getUserDetails(+userId)
+  .subscribe( user => {
+    console.log(user);
+    this.user = user;
+  }, err => console.log(err));
+}
+
+backToViewUsers(){
+    this.router.navigate(['view-users']);
 }
 
 

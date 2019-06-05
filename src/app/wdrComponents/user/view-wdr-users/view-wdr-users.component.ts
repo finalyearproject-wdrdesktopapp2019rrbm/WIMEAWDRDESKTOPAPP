@@ -52,18 +52,26 @@ wdrUsers: any;
     err=> console.log(err))
   }
 
-  // delecteUser(id){
-  //   this.userService.deleteUser(id)
-  //   .subscribe(() =>{
-  //     this.getUsers();
-  //   })
-  // }
+  deleteUser(id){
+    console.log(id);
+    this.userService.deleteUser(id)
+    .subscribe(() =>{
+      this.getUsers();
+    })
+  }
 
   editUser(user: SignUpInfo ) : void {
     localStorage.removeItem('edituserId');
     let userID = user.id.toString();
     localStorage.setItem('editUserId', userID);
     this.router.navigate(['edit-user']);
+  }
+  view(user: SignUpInfo) : void {
+    localStorage.removeItem('viewUserId');
+    let userID = user.id.toString();
+    localStorage.setItem('viewUserId', userID);
+    this.router.navigate(['view-user']);
+
   }
 
 }

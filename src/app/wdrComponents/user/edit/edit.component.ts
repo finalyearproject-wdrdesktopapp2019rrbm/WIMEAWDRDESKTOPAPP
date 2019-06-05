@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SignUpInfo } from '../../models/user/signup-info';
 import { AuthService } from '../../services/allServices';
 
@@ -44,7 +44,12 @@ export class EditComponent implements OnInit {
     console.log(this.user);
     this.dataService.updateUser(this.user)
     .subscribe( res => {
-      console.log(res);
+      this.router.navigate(['view-users']);
+
     }, err => console.log(err));
+  }
+
+  backToViewUsers(){
+      this.router.navigate(['view-users']);
   }
 }
