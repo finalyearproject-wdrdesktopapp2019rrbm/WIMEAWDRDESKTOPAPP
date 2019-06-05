@@ -53,14 +53,18 @@ export class AuthService {
   }
 
   getAllUsers(){
-    //post to httpclient and display user details
+    // post to httpclient and display user details
     return this._http.get(this.userApi)
     .map(res=>{
       this.checkResponse =  res;
-      if(this.checkResponse.body !== '0'){
+      if(this.checkResponse.body !== '0') {
         return res.json();
       }
-    })
+    });
+  }
+
+  updateUser(updatedUserInfo: SignUpInfo): Observable <any> {
+    return this.http.put(this.userApi + '/' + 'update', updatedUserInfo, httpOptions);
 
   }
 }

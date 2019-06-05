@@ -10,7 +10,7 @@ import { AuthService } from '../../services/allServices';
 })
 export class EditComponent implements OnInit {
 
-  user: any = {}; //any =[]
+  user: any = {}; // any =[]
 
 
   constructor(
@@ -31,18 +31,20 @@ export class EditComponent implements OnInit {
     }
   }
 
-  getSingleUser(userId){
+  getSingleUser(userId) {
     this.dataService.getUserDetails(+userId)
     .subscribe( user => {
-      console.log(user)
+      console.log(user);
       this.user = user;
-    }, err => console.log(err)); 
+    }, err => console.log(err));
   }
 
-  updateUser(){
+  updateUser() {
     console.log('update user function');
+    console.log(this.user);
+    this.dataService.updateUser(this.user)
+    .subscribe( res => {
+      console.log(res);
+    }, err => console.log(err));
   }
-
-
-
 }
