@@ -14,44 +14,12 @@
    <!-- Main content -->
 
 <section>
-
-  <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-</button> -->
-<!-- <mat-horizontal-stepper [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill out your name</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill out your address</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Address" formControlName="secondCtrl" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    You are now done.
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
-  </mat-step>
-</mat-horizontal-stepper> -->
-
+    <!-- <mat-form-field>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="observationslip.Date" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field> -->
+        
 <div class="row">
      <form   (ngSubmit)="addObservationslipData()">
               <table>
@@ -72,9 +40,15 @@
                    </td>
                    <td colspan = "4">
 
-                      <div class="input-group">
-                        <span class="input-group-addon">Select Date</span>
-                        <input type="text" name="date"  [(ngModel)]="observationslip.Date" required class="form-control compulsory" placeholder="Enter select date" value="" autocomplete='off'>
+                      <div class="input-group date" data-provide="datepicker">
+                        <!-- <span class="input-group-addon">Select Date</span> -->
+                        <!-- <input type="text" name="date"  [(ngModel)]="observationslip.Date"  required class="datepicker form-control" data-date-format="dd-mm-yyyy" >
+                        <div class="input-group-addon">
+                              <span class="glyphicon glyphicon-th"></span>
+                        </div> -->
+                        <input matInput [matDatepicker]="picker" name="Date" [(ngModel)]="observationslip.Date" placeholder="Choose a date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
                       </div>
                   </td>
             </tr>
@@ -82,6 +56,7 @@
             <tr>
                 <td colspan="6">
                     <div class="input-group"  >
+                       
                         <span class="input-group-addon">Time category</span>
                         <select name="speciormetar"  [(ngModel)]="observationslip.speciormetar"  required class="form-control compulsory">
                           <option value="normal">normal</option>

@@ -47,9 +47,9 @@
                 </div>
             </div>
             <div class="footer">
-                <button  class="btn bg-olive btn-block" id="signin" name="login" ng-click="doesConnectionExist()" >{{username}}sign me in</button>
+                <!-- <button  class="btn bg-olive btn-block" id="signin" name="login"  > sign me in</button> -->
                 <div class="form-group">
-                  <button class="btn btn-primary">Login</button>
+                  <button class="btn btn-block bg-olive btn-primary">Login</button>
                   <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
                     Login failed: {{errorMessage}}
                   </div>

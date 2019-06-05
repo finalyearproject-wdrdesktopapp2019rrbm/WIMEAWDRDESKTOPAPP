@@ -70,6 +70,7 @@ export class ConnectionServiceService {
       this.getUnsyncedRecord().subscribe(
         res => {
           console.log(res);
+          if(res[0].id)
           var data = res[0].id;
           this.dataSynced = res;
           console.log('synced data');

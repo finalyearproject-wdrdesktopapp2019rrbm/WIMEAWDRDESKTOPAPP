@@ -19,7 +19,7 @@ export class AddobservationslipComponent implements OnInit {
   @HostBinding('class') classes ='row';
   private connectionStatus;
   observationslip: Observationslip = {
-    Date: '2019-06-01',
+    Date: '',
     id:null,
     Userid: 1,
     Station: 1,
@@ -144,6 +144,7 @@ this.secondFormGroup = this.formBuilder.group({
 }
 
   addObservationslipData(){
+    console.log(this.observationslip)
 
     this.dataService.createObservationslip(this.observationslip)
     .subscribe( res => {

@@ -10,9 +10,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatStepperModule } from '@angular/material/stepper';
 import {
-  MatButtonModule, MatDialogModule, 
-  MatInputModule, MatPaginatorModule, MatSortModule,
-  MatTableModule, MatToolbarModule, MatIconModule, MatCardModule
+  MatButtonModule, MatDialogModule,
+  MatInputModule, MatPaginatorModule, MatSortModule,MatNativeDateModule, NativeDateModule,
+  MatTableModule, MatToolbarModule, MatIconModule, MatCardModule, MatDatepickerModule
 } from '@angular/material';
 
 // nebular for theme
@@ -100,13 +100,17 @@ import { ObservationslipReportComponent } from './wdrComponents/ReportGeneration
     MatCardModule,
     MatPaginatorModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NativeDateModule
   ],
   entryComponents: [],
   providers: [
       NbSidebarService,
       DataService,
-      UserService
+      UserService,
+      MatDatepickerModule
   ],
   bootstrap: [AppComponent]
 })
