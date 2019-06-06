@@ -11,7 +11,7 @@ export class ConnectionServiceService {
 
   public formsUrl:string='http://localhost:3000/forms';
   private wimeaOnlineApi:string='http://wimea.mak.ac.ug/wdr/wimeaDesktopApiconnect/insert.php';
-
+  private observationslipApi = 'http://localhost:8081/api/observationslip';
   public connected$ =  new BehaviorSubject<boolean>(false);
   private config = 'http://wimea.mak.ac.ug/wdr/wimeaDesktopApiconnect/insert.php';
   public connState: boolean;
@@ -100,8 +100,13 @@ export class ConnectionServiceService {
 
     }
 
+    // countSyncObservationslips(){
+    //   return this._http.get(this.formsUrl+'/count');
+    // }
+
+
     countSyncObservationslips(){
-      return this._http.get(this.formsUrl+'/count');
+      return this._http.get(this.observationslipApi+'/count');
     }
 
     getUnsyncedRecord(){

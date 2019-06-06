@@ -68,7 +68,7 @@ export class DataService {
     //   return this._http.get(this.formsUrl+'/count');
     // }
     countSyncObservationslips(){
-      return this._http.get(thisobservationslipApi+'/count');
+      return this._http.get(this.observationslipApi+'/count');
     }
 
     // updateObservatonslip(observationslip: Observationslip){

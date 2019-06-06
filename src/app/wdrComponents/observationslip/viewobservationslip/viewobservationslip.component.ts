@@ -24,6 +24,7 @@ export class ViewobservationslipComponent implements OnInit {
 
     this.dataService.countSyncObservationslips()
     .subscribe(res => {
+      console.log(res)
       this.syncData = res.json();
       console.log(this.syncData);
       this.unsyncedData = this.syncData[0].number;
