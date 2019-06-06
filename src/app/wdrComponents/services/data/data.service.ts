@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Station } from '../../models/station/station';
 import { Observationslip } from '../../models/observationslip/observationslip';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 import { Http,Headers,Response,RequestOptions } from '@angular/http';
 import 'rxjs/Rx';
@@ -53,9 +54,8 @@ export class DataService {
       return this._http.get(this.observationslipApi+'/getAll');
     }
 
-    getObservationslip(id: number){
-      console.log('hetre')
-      return this._http.get(this.observationslipApi+ '/'+id);
+    getObservationslip(id: number): Observable <any> {
+      return this.http.get(this.observationslipApi+ '/'+id);
     }
 
     getReportObservationslips(){
@@ -64,18 +64,25 @@ export class DataService {
     }
 
 
+    // countSyncObservationslips(){
+    //   return this._http.get(this.formsUrl+'/count');
+    // }
     countSyncObservationslips(){
-      return this._http.get(this.formsUrl+'/count');
+      return this._http.get(thisobservationslipApi+'/count');
     }
 
-    updateObservatonslip(observationslip: Observationslip){
+    // updateObservatonslip(observationslip: Observationslip){
+    //
+    //   // let body = JSON.stringify(observationslip);
+    //   let body = JSON.stringify(observationslip);
+    //   let headers = new Headers({ 'Content-Type': 'application/json'});
+    //   let options = new RequestOptions({ headers: headers });
+    //   return this._http.put(this.formsUrl+'/updateObservationslip', body, options)
+    //   .map((response: Response) => response.json());
+    // }
 
-      // let body = JSON.stringify(observationslip);
-      let body = JSON.stringify(observationslip);
-      let headers = new Headers({ 'Content-Type': 'application/json'});
-      let options = new RequestOptions({ headers: headers });
-      return this._http.put(this.formsUrl+'/updateObservationslip', body, options)
-      .map((response: Response) => response.json());
+    updateObservatonslip(observationslip: Observationslip): Observable <any>{
+       return this.http.put(this.observationslipApi+'/updateObservationslip', observationslip, httpOptions);
     }
 
 

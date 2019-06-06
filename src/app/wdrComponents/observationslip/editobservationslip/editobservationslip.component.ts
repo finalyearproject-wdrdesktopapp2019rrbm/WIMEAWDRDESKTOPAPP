@@ -29,11 +29,21 @@ export class EditobservationslipComponent implements OnInit {
 
   }
 
+  // getObservationslip(slipId){
+  //   this.dataService.getObservationslip(slipId)
+  //   .subscribe( Oslip => {
+  //     console.log(Oslip);
+  //     var slip = Oslip.json();
+  //     this.observationslip = slip[0];
+  //     console.log(this.observationslip);
+  //   }, err => console.log(err));
+  //
+  // }
+
   getObservationslip(slipId){
     this.dataService.getObservationslip(slipId)
     .subscribe( Oslip => {
-      var slip = Oslip.json();
-      this.observationslip = slip[0];
+      this.observationslip = Oslip;
       console.log(this.observationslip);
     }, err => console.log(err));
 
