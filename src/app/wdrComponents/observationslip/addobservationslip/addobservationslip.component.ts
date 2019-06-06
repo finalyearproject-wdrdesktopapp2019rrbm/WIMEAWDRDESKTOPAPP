@@ -159,7 +159,7 @@ this.secondFormGroup = this.formBuilder.group({
         console.log('Sending it online');
 
         this.syncObservationslip(res);
-      }   
+      }
 
       this.router.navigate(['view-observationslips']);
     },  err => console.log(err));
