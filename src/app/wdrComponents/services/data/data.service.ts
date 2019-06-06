@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Station } from '../../models/station/station';
 import { Observationslip } from '../../models/observationslip/observationslip';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Http,Headers,Response,RequestOptions } from '@angular/http';
 import 'rxjs/Rx';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+};
+
 
 @Injectable()
 
@@ -52,8 +57,19 @@ export class DataService {
       .map(res => res.json());
     }
 
+
     countSyncObservationslips(){
       return this._http.get(this.formsUrl+'/count');
+    }
+
+    updateObservatonslip(observationslip: Observationslip){
+
+      // let body = JSON.stringify(observationslip);
+      let body = JSON.stringify(observationslip);
+      let headers = new Headers({ 'Content-Type': 'application/json'});
+      let options = new RequestOptions({ headers: headers });
+      return this._http.put(this.formsUrl+'/updateObservationslip', body, options)
+      .map((response: Response) => response.json());
     }
 
 
@@ -62,7 +78,6 @@ export class DataService {
       let body = JSON.stringify(observationslip);
       let headers = new Headers({ 'Content-Type': 'application/json'});
       let options = new RequestOptions({ headers: headers });
-        // console.log(observationslip);
         return this._http.post(this.formsUrl, body, options)
       .map((response: Response) => response.json());
 

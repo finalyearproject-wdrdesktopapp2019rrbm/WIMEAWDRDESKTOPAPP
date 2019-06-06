@@ -39,4 +39,13 @@ export class EditobservationslipComponent implements OnInit {
 
   }
 
+updateObservationslipData(){
+  this.dataService.updateObservatonslip(this.observationslip)
+  .subscribe( res =>{
+    console.log(res);
+  }, err => console.log(err));
+
+
+  }
+
 }

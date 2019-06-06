@@ -16,9 +16,16 @@
 
 
 <div class="row">
-     <form   (ngSubmit)="addObservationslipData()">
+     <form   (submit)="updateObservationslipData()">
               <table>
                 <tr>
+                  <td colspan = "4">
+
+                     <div class="input-group">
+                       <span class="input-group-addon">Station</span>
+                       <input type="text" name="station"  [(ngModel)]="observationslip.station" required class="form-control " value="" autocomplete='off'>
+                     </div>
+                 </td>
                    <td colspan = "4">
 
                       <div class="input-group">
