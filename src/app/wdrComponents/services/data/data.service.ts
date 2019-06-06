@@ -11,6 +11,7 @@ const httpOptions = {
 };
 
 
+
 @Injectable()
 
 export class DataService {
@@ -21,10 +22,11 @@ export class DataService {
   // private wimeaOnlineURL:string='http://wimea.mak.ac.ug/wdr/ionic_login/wimeaAppconnect/insert.php';
   private wimeaOnlineApi:string='http://wimea.mak.ac.ug/wdr/wimeaDesktopApiconnect/insert.php';
   private wimeaOfflineURL:string='http://localhost/ionic_login/wimeaDesktopApiconnect/insert.php';
+  private observationslipApi = 'http://localhost:8081/api/observationslip';
   private connectionStatus;
 
 
-  constructor(private _http: Http) {
+  constructor(private _http: Http, private http: HttpClient) {
 
     }
   // STATION
@@ -44,12 +46,16 @@ export class DataService {
 
   //OBSERVATIONSLIP
 
+    // getAllObservationslips(){
+    //   return this._http.get(this.forms);
+    // }
     getAllObservationslips(){
-      return this._http.get(this.formsUrl);
+      return this._http.get(this.observationslipApi+'/getAll');
     }
 
     getObservationslip(id: number){
-      return this._http.get(this.formsUrl+ '/'+id);
+      console.log('hetre')
+      return this._http.get(this.observationslipApi+ '/'+id);
     }
 
     getReportObservationslips(){
@@ -73,12 +79,11 @@ export class DataService {
     }
 
 
-    //save observationslip offline
     createObservationslip(observationslip: Observationslip){
       let body = JSON.stringify(observationslip);
       let headers = new Headers({ 'Content-Type': 'application/json'});
       let options = new RequestOptions({ headers: headers });
-        return this._http.post(this.formsUrl, body, options)
+        return this._http.post(this.observationslipApi+ '/create', body, options)
       .map((response: Response) => response.json());
 
     }
