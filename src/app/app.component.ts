@@ -23,7 +23,7 @@ import { User } from './wdrComponents/models/user/user';
 export class AppComponent implements OnInit {
   title = 'WDRDesktopApp';
   user: User[] = [];
-  info: any;
+   info: any;
   returnUrl = '';
 
   private roles: string[];
