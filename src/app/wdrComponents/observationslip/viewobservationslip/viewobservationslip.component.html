@@ -10,7 +10,7 @@
      <button type="button" class="btn btn-primary">
       Unsynchronized data <span class="badge badge-light">{{unsyncedData}}</span>
     </button><br /><br />
-    
+
 
     <table class="table table-striped  table-responsive-md table-responsive-sm table">
       <thead class="thead-dark">
@@ -214,7 +214,7 @@
     		<td>{{observationslip.Remarks}}</td>
     		<td>{{observationslip.Approved}}</td>
         <td> <button type="button" class="btn btn-primary " name="button" (click)= "editObservationslip(observationslip.id)">Edit</button></td>
-        <td>{{ observationslip.Approved }}</td>
+        <td ng-if="info.authorities == ROLE_OBSERVER"  class="btn btn-success "  (click)= "approveObservationslip(observationslip.id)"> Approve</td>
 
 
        </tr>

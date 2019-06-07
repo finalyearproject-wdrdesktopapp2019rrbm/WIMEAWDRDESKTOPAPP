@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data/data.service';
+import { TokenStorageService } from '../../services/allServices';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,8 +13,14 @@ export class ViewobservationslipComponent implements OnInit {
   syncData:any = [];
   public unsyncedData:number;
   title = 'Observationslips';
+  info: any;
 
-  constructor(private router: Router, private dataService: DataService) { }
+
+  constructor(
+     private router: Router,
+     private dataService: DataService,
+     private token: TokenStorageService
+   ) { }
 
   ngOnInit() {
         this.dataService.getAllObservationslips()
@@ -29,7 +36,13 @@ export class ViewobservationslipComponent implements OnInit {
       console.log(this.syncData);
       this.unsyncedData = this.syncData[0].number;
       console.log(this.unsyncedData);
-    })
+    });
+
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
 
   }
 
@@ -38,6 +51,13 @@ export class ViewobservationslipComponent implements OnInit {
     let observationslipId = id.toString();
     localStorage.setItem('editSlipId', observationslipId);
     this.router.navigate(['edit-observationslip']);
+
+
+  }
+
+  approveObservationslip(id){
+    
+    this.router.navigate(['view-observationslips']);
 
 
   }
