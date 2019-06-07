@@ -212,9 +212,17 @@
     		<td>{{observationslip.DeviceType}}</td>
     		<td>{{observationslip.SubmittedBy}}</td>
     		<td>{{observationslip.Remarks}}</td>
-    		<td>{{observationslip.Approved}}</td>
-        <td> <button type="button" class="btn btn-primary " name="button" (click)= "editObservationslip(observationslip.id)">Edit</button></td>
-        <td ng-if="info.authorities == ROLE_OBSERVER"  class="btn btn-success "  (click)= "approveObservationslip(observationslip.id)"> Approve</td>
+    		<td>
+            <button type="button" name="button" *ngIf="observationslip.Approved == '1'">Approved</button>
+              <button type="button" name="button" *ngIf="observationslip.Approved == '0'">Not Approved</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-primary " name="button" (click)= "editObservationslip(observationslip.id)">Edit</button>
+          <button  type="button" *ngIf="info.authorities == ROLE_OC" class="btn btn-success " name="button" (click)= "editObservationslip(observationslip.id)">Edit</button>
+
+
+          <!-- <button ng-if="info.authorities == OC_OBSERVER && observationslip.Approved != 1"  class="btn btn-success "  (click)= "approveObservationslip(observationslip)"> Approve</button> -->
+        </td>
 
 
        </tr>

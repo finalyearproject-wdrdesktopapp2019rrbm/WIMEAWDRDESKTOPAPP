@@ -56,7 +56,10 @@ export class ViewobservationslipComponent implements OnInit {
   }
 
   approveObservationslip(id){
-    
+    this.dataService.approveObservationslip(id)
+  .subscribe( data => {
+    console.log(data);
+  }, err=> console.log(err));
     this.router.navigate(['view-observationslips']);
 
 

@@ -78,12 +78,20 @@ export class DataService {
     // }
 
     updateObservatonslip(observationslip: Observationslip){
-
-      // let body = JSON.stringify(observationslip);
       let body = JSON.stringify(observationslip);
       let headers = new Headers({ 'Content-Type': 'application/json'});
       let options = new RequestOptions({ headers: headers });
       return this._http.put(this.formsUrl+'/updateObservationslip', body, options)
+      .map((response: Response) => response.json());
+    }
+
+    approveObservationslip(observationslip: Observationslip){
+      let body = JSON.stringify(observationslip);
+      console.log(body);
+      // let body = JSON.stringify(observationslip);
+      let headers = new Headers({ 'Content-Type': 'application/json'});
+      let options = new RequestOptions({ headers: headers });
+      return this._http.put(this.formsUrl+'/approve', body, options)
       .map((response: Response) => response.json());
     }
 
@@ -114,6 +122,7 @@ export class DataService {
     updateSyncStatus(id){
       console.log(id);
       let body = JSON.stringify(id);
+      console.log(body);
       let headers = new Headers({ 'Content-Type': 'application/json'});
       let options = new RequestOptions({ headers: headers });
         // console.log(body);
