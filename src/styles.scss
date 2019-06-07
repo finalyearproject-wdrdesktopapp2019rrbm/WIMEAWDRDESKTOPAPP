@@ -15,3 +15,11 @@ a, button, input, select {
   -webkit-app-region: no-drag;
 
 }
+
+@import "./styles/css/form.css";
+@import "./styles/css/AdminLTE.css";
+@import "./styles/css/bootstrap.css";
+@import "./styles/css/dashboard.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

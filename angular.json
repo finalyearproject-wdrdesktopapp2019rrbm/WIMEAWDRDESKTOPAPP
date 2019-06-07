@@ -37,7 +37,12 @@
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
              "./node_modules/popper.js/dist/umd/popper.min.js",
-             "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+             "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+             "src/js/form0.js",
+               "./src/js/form.js",
+               "./src/js/moment.min.js",
+               "./src/js/AdminLTE/app.js",
+               "./src/js/jquery.maskedinput.min.js"
             ],
             "es5BrowserSupport": true
           },

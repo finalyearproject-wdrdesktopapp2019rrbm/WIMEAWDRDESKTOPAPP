@@ -1,8 +1,7 @@
   <nb-layout class="container" *ngIf="info.token; else loggedOut">
                     <nb-layout-header fixed>
                     <!-- Header-->
-                    WDR Desktop App
-
+                    WDR Desktop App &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <h3> {{authority}} PANEL </h3>
                     </nb-layout-header>
 
 
@@ -30,14 +29,6 @@
                     </nb-sidebar>
 
                     <nb-layout-column>
-                      <div class="row">
-                        <div class="col-lg-10 col-md-10">
-                        </div>
-                        <div class="col-lg-2 col-md-2">
-                          <button type="button" class="btn btn-danger" (click)="logout()" name="button">Sign out</button>
-                        </div>
-                      </div>
-
                       <router-outlet></router-outlet>
                     </nb-layout-column>
 
