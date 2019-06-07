@@ -13,6 +13,7 @@ export class ObservationslipReportComponent implements OnInit {
   observationslips: any = [];
   observationslip: any = [];
   userInfo;
+  show;
 
   public captureScreen()
   {
@@ -42,9 +43,12 @@ export class ObservationslipReportComponent implements OnInit {
     this.dataService.getReportObservationslips()
     .subscribe( data => {
       this.observationslips = data;
+      this.show =0;
       this.observationslip = this.observationslips[0];
       console.log(this.observationslip);
 });
   }
+
+
 
 }

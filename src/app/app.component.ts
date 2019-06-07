@@ -116,29 +116,8 @@ export class AppComponent implements OnInit {
         {
           title: 'Home',
           link: ['home']
-        },
-        {
-          title: 'Login role',
-          link: ['auth/login'],
-        },
-        {
-          title: 'Sign Out',
-          link: ['auth/login'],
         }
       ]
-    },
-    {
-      title: 'Profile',
-      children: [
-        {
-          title: 'Change Password',
-          link: ['change-password'],
-        },
-        {
-          title: 'Edit profile',
-          link: [],
-        }
-      ],
     },
     {
       title: 'User Management',
