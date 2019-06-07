@@ -7,7 +7,7 @@
       </ol>
   </section>
   <div [ngClass]="(conn.connected$ | async) ? 'success' : 'error'" style="margin-left:50%">
-      <span><b class="btn btn-success"> Current status:  {{ (conn.connected$ | async) ? 'Online' : 'Failed to connect... Retrying...' }} </b></span>
+      <span><b class="btn btn-success"> CurrentInternet status:  {{ (conn.connected$ | async) ? 'Online' : 'Failed to connect... Retrying...' }} </b></span>
     </div>
     <br />
 
@@ -35,6 +35,12 @@
                     </div>
                    </td>
                    <td colspan = "4">
+                      <!-- <div class="input-group date" data-provide="datepicker">
+                          <input type="text" class="form-control">
+                          <div class="input-group-addon">
+                              <span class="glyphicon glyphicon-th"></span>
+                          </div>
+                      </div> -->
 
                       <div class="input-group">
                         <span class="input-group-addon">Select Date</span>

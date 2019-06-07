@@ -9,9 +9,10 @@ import { Http,Headers,Response,RequestOptions } from '@angular/http';
 })
 export class ConnectionServiceService {
 
-  public formsUrl:string='http://localhost:3000/forms';
+  // public formsUrl:string='http://localhost:3000/forms';
+  public formsUrl:string='/forms';
   private wimeaOnlineApi:string='http://wimea.mak.ac.ug/wdr/wimeaDesktopApiconnect/insert.php';
-  private observationslipApi = 'http://localhost:8081/api/observationslip';
+  private observationslipApi = '/api/observationslip';
   public connected$ =  new BehaviorSubject<boolean>(false);
   private config = 'http://wimea.mak.ac.ug/wdr/wimeaDesktopApiconnect/insert.php';
   public connState: boolean;
@@ -100,14 +101,14 @@ export class ConnectionServiceService {
 
     }
 
-    // countSyncObservationslips(){
-    //   return this._http.get(this.formsUrl+'/count');
-    // }
-
-
     countSyncObservationslips(){
-      return this._http.get(this.observationslipApi+'/count');
+      return this._http.get(this.formsUrl+'/count');
     }
+
+
+    // countSyncObservationslips(){
+    //   return this._http.get(this.observationslipApi+'/countUnsynced');
+    // }
 
     getUnsyncedRecord(){
       console.log('find record to sync');

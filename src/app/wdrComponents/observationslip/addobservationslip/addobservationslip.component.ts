@@ -4,6 +4,7 @@ import { DataService, ConnectionServiceService } from '../../services/allService
 import { Observationslip } from '../../models/observationslip/observationslip';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
+// declare var $: any
 
 @Component({
   selector: 'app-addobservationslip',

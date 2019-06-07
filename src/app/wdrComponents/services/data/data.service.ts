@@ -18,12 +18,14 @@ const httpOptions = {
 export class DataService {
 
   public url:string='http://localhost:3000/Tasks';
-  public formsUrl:string='http://localhost:3000/forms';
+  // public formsUrl:string='http://localhost:3000/forms';
+    public formsUrl:string='/forms';
   public stationsUrl:string='http://localhost:3000/stations';
   // private wimeaOnlineURL:string='http://wimea.mak.ac.ug/wdr/ionic_login/wimeaAppconnect/insert.php';
   private wimeaOnlineApi:string='http://wimea.mak.ac.ug/wdr/wimeaDesktopApiconnect/insert.php';
   private wimeaOfflineURL:string='http://localhost/ionic_login/wimeaDesktopApiconnect/insert.php';
-  private observationslipApi = 'http://localhost:8081/api/observationslip';
+  // private observationslipApi = 'http://localhost:8081/api/observationslip';
+  private observationslipApi = '/api/observationslip';
   private connectionStatus;
 
 
@@ -47,16 +49,20 @@ export class DataService {
 
   //OBSERVATIONSLIP
 
-    // getAllObservationslips(){
-    //   return this._http.get(this.forms);
-    // }
     getAllObservationslips(){
-      return this._http.get(this.observationslipApi+'/getAll');
+      return this._http.get(this.formsUrl);
     }
+    // getAllObservationslips(){
+    //   return this._http.get(this.observationslipApi+'/getAll');
+    // }
 
     getObservationslip(id: number): Observable <any> {
-      return this.http.get(this.observationslipApi+ '/'+id);
+      return this.http.get(this.formsUrl+ '/'+id);
     }
+
+    // getObservationslip(id: number): Observable <any> {
+    //   return this.http.get(this.observationslipApi+ '/'+id);
+    // }
 
     getReportObservationslips(){
       return this._http.get(this.formsUrl)
@@ -64,33 +70,42 @@ export class DataService {
     }
 
 
-    // countSyncObservationslips(){
-    //   return this._http.get(this.formsUrl+'/count');
-    // }
     countSyncObservationslips(){
-      return this._http.get(this.observationslipApi+'/count');
+      return this._http.get(this.formsUrl+'/count');
+    }
+    // countSyncObservationslips() {
+    //   return this._http.get(this.observationslipApi + '/'+ 'countUnsynced');
+    // }
+
+    updateObservatonslip(observationslip: Observationslip){
+
+      // let body = JSON.stringify(observationslip);
+      let body = JSON.stringify(observationslip);
+      let headers = new Headers({ 'Content-Type': 'application/json'});
+      let options = new RequestOptions({ headers: headers });
+      return this._http.put(this.formsUrl+'/updateObservationslip', body, options)
+      .map((response: Response) => response.json());
     }
 
-    // updateObservatonslip(observationslip: Observationslip){
-    //
-    //   // let body = JSON.stringify(observationslip);
+    // updateObservatonslip(observationslip: Observationslip): Observable <any>{
+    //    return this.http.put(this.observationslipApi+'/updateObservationslip', observationslip, httpOptions);
+    // }
+
+
+    // createObservationslip(observationslip: Observationslip){
     //   let body = JSON.stringify(observationslip);
     //   let headers = new Headers({ 'Content-Type': 'application/json'});
     //   let options = new RequestOptions({ headers: headers });
-    //   return this._http.put(this.formsUrl+'/updateObservationslip', body, options)
+    //     return this._http.post(this.observationslipApi+ '/create', body, options)
     //   .map((response: Response) => response.json());
+    //
     // }
-
-    updateObservatonslip(observationslip: Observationslip): Observable <any>{
-       return this.http.put(this.observationslipApi+'/updateObservationslip', observationslip, httpOptions);
-    }
-
 
     createObservationslip(observationslip: Observationslip){
       let body = JSON.stringify(observationslip);
       let headers = new Headers({ 'Content-Type': 'application/json'});
       let options = new RequestOptions({ headers: headers });
-        return this._http.post(this.observationslipApi+ '/create', body, options)
+        return this._http.post(this.formsUrl+ '/create', body, options)
       .map((response: Response) => response.json());
 
     }
