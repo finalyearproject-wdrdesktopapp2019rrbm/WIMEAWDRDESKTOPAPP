@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "ng build && electron .",
-    "pack": "electron-packager ."
+    "pack": "build --dir .",
+    "dist": "build"
   },
   "private": true,
   "dependencies": {
