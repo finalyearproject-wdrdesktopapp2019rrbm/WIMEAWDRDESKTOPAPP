@@ -154,18 +154,18 @@ export class AppComponent implements OnInit {
       ],
     },
     {
-      title: 'Observers',
+      title: 'User Management',
       children: [
         {
-          title: 'Add an observer',
+          title: 'Add a user',
           link: ['register']
         },
         {
-          title: 'View obsevers',
+          title: 'View users',
           link: ['view-users']
         },
         {
-          title: 'Edit obsever details',
+          title: 'Edit user details',
           link: ['edit-user']
         }
       ]
@@ -174,15 +174,11 @@ export class AppComponent implements OnInit {
       title: 'Observationslip',
       children: [
         {
-          title: 'View approved observationslip',
-          link: [],
+          title: 'View all observationslip',
+          link: ['view-observationslips'],
         },
         {
           title: 'Submitted observationslip',
-          link: [],
-        },
-        {
-          title: 'Rejected observationslips',
           link: [],
         }
       ],
@@ -206,39 +202,11 @@ export class AppComponent implements OnInit {
     },
 
     {
-      title: 'Report',
+      title: 'Report Generation',
       children: [
         {
-          title: 'Observationslip Report',
+          title: 'Generate Observationslip Report',
           link: ['observationslip-report'],
-        },
-        {
-          title: 'Meta Report',
-          link: [],
-        },
-        {
-          title: 'Weather Summary Report',
-          link: [],
-        },
-        {
-          title: 'Dekadal Report',
-          link: [],
-        },
-        {
-          title: 'Synoptic Report',
-          link: [],
-        },
-        {
-          title: 'Monthly Reainfall Report',
-          link: [],
-        },
-        {
-          title: 'Annual Rainfall Report',
-          link: [],
-        },
-        {
-          title: 'Custainfall Report',
-          link: [],
         }
       ],
     },
