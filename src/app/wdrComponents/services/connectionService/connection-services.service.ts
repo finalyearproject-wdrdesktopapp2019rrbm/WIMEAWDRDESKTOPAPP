@@ -9,10 +9,10 @@ import { Http,Headers,Response,RequestOptions } from '@angular/http';
 })
 export class ConnectionServiceService {
 
-  // public formsUrl:string='http://localhost:3000/forms';
-  public formsUrl:string='/forms';
+  public formsUrl:string='http://localhost:3000/forms';
+  // public formsUrl:string='/forms';
   private wimeaOnlineApi:string='http://wimea.mak.ac.ug/wdr/wimeaDesktopApiconnect/insert.php';
-  private observationslipApi = '/api/observationslip';
+  // private observationslipApi = '/api/observationslip';
   public connected$ =  new BehaviorSubject<boolean>(false);
   private config = 'http://wimea.mak.ac.ug/wdr/wimeaDesktopApiconnect/insert.php';
   public connState: boolean;

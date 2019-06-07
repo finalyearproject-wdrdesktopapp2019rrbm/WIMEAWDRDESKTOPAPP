@@ -17,8 +17,8 @@ const httpOptions = {
 
 export class AuthService {
   private _loginUrl = 'http://localhost:3000/users/authenticate';
-  // private loginUrl = 'http://localhost:8081/api/auth/signin';
-  private loginUrl = '/api/auth/signin';
+  private loginUrl = 'http://localhost:8081/api/auth/signin';
+  // private loginUrl = '/api/auth/signin';
   private signupUrl = 'http://localhost:8081/api/auth/signup';
   private userApi = 'http://localhost:8081/api/users';
 

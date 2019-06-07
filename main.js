@@ -14,7 +14,7 @@ let win
 
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({ frame: false, width: 1281, height: 800, minWidth: 1281, minHeight: 800 })
+  win = new BrowserWindow({ frame:  true, width: 1281, height: 800, minWidth: 1281, minHeight: 800 })
 
   // and load the index.html of the app.
   win.loadFile('dist/WDRDesktopApp/index.html')
