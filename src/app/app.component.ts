@@ -41,19 +41,6 @@ export class AppComponent implements OnInit {
       ]
     },
     {
-      title: 'Profile',
-      children: [
-        {
-          title: 'Change Password',
-          link: ['change-password'],
-        },
-        {
-          title: 'Edit profile',
-          link: ['edit-user'],
-        }
-      ],
-    },
-    {
       title: 'OC',
       children: [
         {
@@ -182,24 +169,25 @@ export class AppComponent implements OnInit {
           link: [],
         }
       ],
-    },{
-      title: 'Import Data',
-      children: [
-        {
-          title: 'Import CSV Data',
-          link: ['import-observationslip'],
-        },
-      ]
     },
-    {
-      title: 'Export Data',
-      children: [
-        {
-          title: 'Import CSV Data',
-          link: [],
-        },
-      ]
-    },
+    // {
+    //   title: 'Import Data',
+    //   children: [
+    //     {
+    //       title: 'Import CSV Data',
+    //       link: ['import-observationslip'],
+    //     },
+    //   ]
+    // },
+    // {
+    //   title: 'Export Data',
+    //   children: [
+    //     {
+    //       title: 'Import CSV Data',
+    //       link: [],
+    //     },
+    //   ]
+    // },
 
     {
       title: 'Report Generation',

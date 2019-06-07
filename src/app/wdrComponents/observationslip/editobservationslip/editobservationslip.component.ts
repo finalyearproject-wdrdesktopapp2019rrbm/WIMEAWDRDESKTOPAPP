@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService, ConnectionServiceService } from '../../services/allServices';
 import { Router } from '@angular/router';
+import { TokenStorageService } from '../../services/allServices';
+
 
 @Component({
   selector: 'app-editobservationslip',
@@ -10,13 +12,22 @@ import { Router } from '@angular/router';
 export class EditobservationslipComponent implements OnInit {
  private connectionStatus;
  observationslip : any = {};
+ info: any;
   constructor(
     private dataService: DataService,
     public conn: ConnectionServiceService,
-    private router: Router
+    private router: Router,
+    private token: TokenStorageService
   ) { }
 
   ngOnInit() {
+
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
+
     const slipId = JSON.parse(localStorage.getItem('editSlipId'));
     console.log(slipId);
     if(!slipId){

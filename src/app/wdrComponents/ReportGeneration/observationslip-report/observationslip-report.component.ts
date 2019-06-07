@@ -38,11 +38,6 @@ export class ObservationslipReportComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    // const loggedInUser = JSON.parse(localStorage.getItem('loggedinUser'));
-    // this.user = loggedInUser;
-    // this.userInfo =  this.user[0];
-    // console.log(name);
-    // console.log(this.user);
 
     this.dataService.getReportObservationslips()
     .subscribe( data => {

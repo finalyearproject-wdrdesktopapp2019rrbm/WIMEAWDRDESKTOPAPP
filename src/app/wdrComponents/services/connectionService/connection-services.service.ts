@@ -64,10 +64,6 @@ export class ConnectionServiceService {
 
       // if there is a record that is not synced -> sync
       if(this.countOfUnsyncedRecords >0) {
-
-
-
-
       this.getUnsyncedRecord().subscribe(
         res => {
           console.log(res);

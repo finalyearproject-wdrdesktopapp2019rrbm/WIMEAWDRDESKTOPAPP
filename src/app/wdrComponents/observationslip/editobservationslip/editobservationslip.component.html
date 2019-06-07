@@ -1091,20 +1091,14 @@
                                       <span class="input-group-addon">TREND</span>
                                       <textarea  name="trend" value=""  class="form-control" style="height:40px;"  [(ngModel)]="observationslip.trend"  onkeyup=""></textarea>
                                   </td>
-                                  <td>
-                                    <div>
+                                  <td >
+                                    <div >
                                         <span class="input-group-addon">Approved</span>
-                                        <select name="Approved"  [(ngModel)]="observationslip.Approved"  disabled  class="form-control" >
+                                        <select name="Approved"  [(ngModel)]="observationslip.Approved"   class="form-control" >
                                             <option value=""></option>
-                                            <option value="TRUE">TRUE</option>
-                                            <option value="FALSE">FALSE</option>
-                                          </select>
-                                          <input type="hidden" name="Approved"  [(ngModel)]="observationslip.Approved" >
-                                          <select>
-                                              <option value=""></option>
-                                              <option value="TRUE">TRUE</option>
-                                              <option value="FALSE">FALSE</option>
-                                          </select>
+                                            <option value="1">TRUE</option>
+                                            <option value="0">FALSE</option>
+                                        </select>
                                     </div>
                                   </td>
                                 </tr>
