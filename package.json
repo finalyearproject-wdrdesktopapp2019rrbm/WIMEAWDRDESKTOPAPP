@@ -91,7 +91,7 @@
     "electron": "^5.0.2",
     "electron-builder": "^20.43.0",
     "electron-packager": "^13.1.1",
-    "https-proxy-agent": "^2.2.1",
+    "https-proxy-agent": "^2.2.3",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",
