@@ -64,7 +64,7 @@
     "html2canvas": "^1.0.0-rc.3",
     "jquery": "^3.4.1",
     "jspdf": "^1.5.3",
-    "jszip": "^3.2.1",
+    "jszip": "^3.7.0",
     "nebular-icons": "^1.1.0",
     "pdfmake": "^0.1.56",
     "popper.js": "^1.15.0",
